@@ -2,6 +2,9 @@
 
 ## Description
 Ce dépôt contient le travail collaboratif réalisé par l'équipe dans le cadre du projet **HDDL**.
+
+## Sujet du projet
+Détéction des panneaux routiers.
 ## Structure du dépôt
 
 
