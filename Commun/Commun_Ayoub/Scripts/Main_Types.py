@@ -28,7 +28,7 @@ from Train import *
 # pour creer un dataframe contenant les informations des images (Path, Type, Sublabel, Label). Si, elle à False, le DataFrame en question 
 # doit déjà exister, et va donc être utilisé pour la suite.
 
-Pre_Preprocessing = 0
+Pre_Preprocessing = False
 Image_Information_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Anotations/"
 Name_Image_Information = "Image_Information.csv"
 Name_Image_Information_Train = "Image_Information_Train.csv"
@@ -137,7 +137,7 @@ Model = resnet18(num_classes=len(types_to_int))
 
 
 # Train the model
-Nb_Epochs = 80
+Nb_Epochs = 50
 optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.0001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
