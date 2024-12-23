@@ -35,4 +35,4 @@ Chaque membre de l'équipe dispose de son propre dossier pour :
 ### Initialisation du projet
 1. Clonez le dépôt :
    ```bash
-   git clone git@github.com:Ayoub-Choukri/Projet_HDDL.git
+   git clone git@github.com:Ayoub-Choukri/Projet_HDDL_2.git
