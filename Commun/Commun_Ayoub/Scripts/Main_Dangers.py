@@ -124,8 +124,8 @@ Model = resnet18(num_classes=np.unique(labels_train).shape[0])
 
 
 # Train the model
-Nb_Epochs = 80
-optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.001)
+Nb_Epochs = 200
+optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.0001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 augment = True
@@ -135,7 +135,7 @@ Confusion_Matrix_Saving_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimens
 Losses_Saving_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Commun_Ayoub/Metrics/Metrics_Dangers/Losses/"
 
 if Train:
-    Train_Losses_Per_Batch, Test_Losses_Per_Batch, Train_Accuracy_Per_Batch, Test_Accuracy_Per_Batch, Train_Losses_Per_Epoch, Test_Losses_Per_Epoch, Train_Accuracy_Per_Epoch, Test_Accuracy_Per_Epoch = train_model(Model, dataloader_train,dataloader_test,Nb_Epochs,criterion, optimizer,device,train_on="labels",augment=augment,transforms= transform_type)
+    Train_Losses_Per_Batch, Test_Losses_Per_Batch, Train_Accuracy_Per_Batch, Test_Accuracy_Per_Batch, Train_Losses_Per_Epoch, Test_Losses_Per_Epoch, Train_Accuracy_Per_Epoch, Test_Accuracy_Per_Epoch = train_model(Model, dataloader_train,dataloader_test,Nb_Epochs,criterion, optimizer,device,train_on="sublabels",augment=augment,transforms= transform_type)
 
     # Save the model
     save_model(Model,Model_Path,Save_Architecture)
@@ -159,10 +159,10 @@ else:
 
 
 # Testing
-Predicted_Train , Labels_Train = test_model(Model,dataloader_train,device,train_on="labels")
+Predicted_Train , Labels_Train = test_model(Model,dataloader_train,device,train_on="sublabels")
 confusion_Matrix_Train = compute_confusion_matrix(Labels_Train,Predicted_Train)
 
-Predicted_Test , Labels_Test = test_model(Model,dataloader_test,device,train_on="labels")
+Predicted_Test , Labels_Test = test_model(Model,dataloader_test,device,train_on="sublabels")
 confusion_Matrix_Test = compute_confusion_matrix(Labels_Test,Predicted_Test)
 
 # plot confusion matrix
