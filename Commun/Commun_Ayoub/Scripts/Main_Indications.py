@@ -18,9 +18,8 @@ sys.path.append(Path_Modules)
 sys.path.append(Path_Models)
 # Importer les module
 from Preprocessing import *
-from Model import *
+from Resnet import *
 from Train import *
-
 
 # On définit une variable booleeene, pour savoir si on renomme les images, parcourt tous les dossiers et sous dossiers d'images
 # pour creer un dataframe contenant les informations des images (Path, Type, Sublabel, Label). Si, elle à False, le DataFrame en question 
