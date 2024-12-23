@@ -137,7 +137,7 @@ Model = resnet18(num_classes=len(types_to_int))
 
 
 # Train the model
-Nb_Epochs = 100
+Nb_Epochs = 70
 optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.0001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

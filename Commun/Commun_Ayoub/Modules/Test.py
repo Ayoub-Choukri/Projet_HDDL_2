@@ -53,10 +53,10 @@ def import_images_nparrays_test(folder_images_path, resize=False, size=(224,224)
     for image_name in os.listdir(folder_images_path):
         image = Image.open(folder_images_path + "/" + image_name).convert("RGB")
         if resize : 
-            image = image.resize(size)
+            image_array = image.resize(size)
 
 
-        image_array = np.array(image)
+        image_array = np.array(image_array)
         # print("Image imported : ", image_array)
 
         if normalize:

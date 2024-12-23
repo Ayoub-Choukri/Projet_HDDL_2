@@ -18,7 +18,7 @@ sys.path.append(Path_Modules)
 sys.path.append(Path_Models)
 # Importer les module
 from Preprocessing import *
-from Model import *
+from Resnet import *
 from Train import *
 
 
@@ -81,8 +81,8 @@ normalize=True
 # Nb_Images_To_Import = 5
 Frac_Images_To_Import = 1
 
-images_train, types_train, sublabels_train, labels_train = import_images_tensor(Image_Information_Dataframe_Train.sample(frac=Frac_Images_To_Import),"Path", "Type", "Sublabel", "Label",resize=resize, size=size,normalize=normalize)
-images_test , types_test, sublabels_test, labels_test = import_images_tensor(Image_Information_Dataframe_Test.sample(frac=Frac_Images_To_Import),"Path", "Type", "Sublabel", "Label",resize=resize, size=size,normalize=normalize)
+images_train, types_train, sublabels_train, labels_train = import_images_tensor(Image_Information_Dataframe_Train.sample(frac=Frac_Images_To_Import),"Relative_Path", "Type", "Sublabel", "Label",resize=resize, size=size,normalize=normalize)
+images_test , types_test, sublabels_test, labels_test = import_images_tensor(Image_Information_Dataframe_Test.sample(frac=Frac_Images_To_Import),"Relative_Path", "Type", "Sublabel", "Label",resize=resize, size=size,normalize=normalize)
 
 
 
@@ -91,8 +91,8 @@ save_dicts = True
 Path_Save_Dicts = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Commun_Ayoub/Encoding_Dictionaries/Obligations/"
 
 types_to_int , int_to_types = Create_Encoding_Label_Dictionary(types_train)
-sublabels_to_int , int_to_sublabels = Create_Encoding_Label_Dictionary(sublabels_train,save_dicts=save_dicts,Path_Save=Path_Save_Dicts)
-labels_to_int , int_to_labels = Create_Encoding_Label_Dictionary(labels_train,save_dicts=save_dicts,Path_Save=Path_Save_Dicts)
+sublabels_to_int , int_to_sublabels = Create_Encoding_Label_Dictionary(sublabels_train,save=save_dicts, path=Path_Save_Dicts,title_label_to_int='sublabels_to_int',title_int_to_label='int_to_sublabels')
+labels_to_int , int_to_labels = Create_Encoding_Label_Dictionary(labels_train,save=save_dicts, path=Path_Save_Dicts,title_label_to_int='labels_to_int',title_int_to_label='int_to_labels')
 
 # Encodage des labels
 types_encoded_train,types_encoded_test = encode_labels(types_train, types_to_int) , encode_labels(types_test, types_to_int)
@@ -124,17 +124,17 @@ Model = resnet18(num_classes=np.unique(labels_train).shape[0])
 
 
 # Train the model
-Nb_Epochs = 350
-optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.01)
+Nb_Epochs = 200
+optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 augment = True
-transform_type =create_transofrm_augmentation_labels(p=0.5)
+transform_type =create_transofrm_augmentation_labels(p=0.6,rotmax=15,prob_vertical_flip = 0)
 
 Confusion_Matrix_Saving_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Commun_Ayoub/Metrics/Metrics_Obligations/Confusion_Matrix/"
 Losses_Saving_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Commun_Ayoub/Metrics/Metrics_Obligations/Losses/"
 if Train:
-    Train_Losses_Per_Batch, Test_Losses_Per_Batch, Train_Accuracy_Per_Batch, Test_Accuracy_Per_Batch, Train_Losses_Per_Epoch, Test_Losses_Per_Epoch, Train_Accuracy_Per_Epoch, Test_Accuracy_Per_Epoch = train_model(Model, dataloader_train,dataloader_test,Nb_Epochs,criterion, optimizer,device,train_on="labels",augment=augment,transforms= transform_type)
+    Train_Losses_Per_Batch, Test_Losses_Per_Batch, Train_Accuracy_Per_Batch, Test_Accuracy_Per_Batch, Train_Losses_Per_Epoch, Test_Losses_Per_Epoch, Train_Accuracy_Per_Epoch, Test_Accuracy_Per_Epoch = train_model(Model, dataloader_train,dataloader_test,Nb_Epochs,criterion, optimizer,device,train_on="sublabels",augment=augment,transforms= transform_type)
 
     # Save the model
     save_model(Model,Model_Path,Save_Architecture)
@@ -158,14 +158,14 @@ else:
 
 
 # Testing
-Predicted_Train , Labels_Train = test_model(Model,dataloader_train,device,train_on="labels")
+Predicted_Train , Labels_Train = test_model(Model,dataloader_train,device,train_on="sublabels")
 confusion_Matrix_Train = compute_confusion_matrix(Labels_Train,Predicted_Train)
 
-Predicted_Test , Labels_Test = test_model(Model,dataloader_test,device,train_on="labels")
+Predicted_Test , Labels_Test = test_model(Model,dataloader_test,device,train_on="sublabels")
 confusion_Matrix_Test = compute_confusion_matrix(Labels_Test,Predicted_Test)
 
 # plot confusion matrix
-plot_confusion_matrix(confusion_Matrix_Train,int_to_labels,figsize=(30,25),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Train.png")
-plot_confusion_matrix(confusion_Matrix_Test,int_to_labels,figsize=(30,25),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Test.png")
-plot_confusion_matrix(confusion_Matrix_Test,normalize=True, int_to_labels=int_to_labels, figsize=(30,25),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Test_Normalized.png")
-plot_confusion_matrix(confusion_Matrix_Train,normalize=True, int_to_labels=int_to_labels, figsize=(30,25),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Train_Normalized.png")
+plot_confusion_matrix(confusion_Matrix_Train,int_to_sublabels,figsize=(30,25),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Train.png")
+plot_confusion_matrix(confusion_Matrix_Test,int_to_sublabels,figsize=(30,25),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Test.png")
+plot_confusion_matrix(confusion_Matrix_Test,normalize=True, int_to_label=int_to_sublabels, figsize=(30,25),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Test_Normalized.png")
+plot_confusion_matrix(confusion_Matrix_Train,normalize=True, int_to_label=int_to_sublabels, figsize=(30,25),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Train_Normalized.png")
