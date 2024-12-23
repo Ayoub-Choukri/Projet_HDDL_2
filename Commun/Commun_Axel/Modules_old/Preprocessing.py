@@ -606,7 +606,7 @@ def create_transofrm_augmentation_labels(p=0.6):
     # p est la probabilité d'appliquer la transformation
     List_Transforms = [
         RandomVerticalFlip(0.6),
-        RandomRotation(45),
+        RandomRotation(50),
         RandomPerspective(),
         ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1),
         RandomAffine(degrees=30),

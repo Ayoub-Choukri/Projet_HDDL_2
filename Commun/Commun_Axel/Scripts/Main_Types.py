@@ -20,6 +20,7 @@ sys.path.append(Path_Models)
 from Preprocessing import *
 from Resnet import *
 from Train import *
+from EfficientNet import *
 
 
 
