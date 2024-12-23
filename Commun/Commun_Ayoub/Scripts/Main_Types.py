@@ -28,7 +28,7 @@ from Train import *
 # pour creer un dataframe contenant les informations des images (Path, Type, Sublabel, Label). Si, elle à False, le DataFrame en question 
 # doit déjà exister, et va donc être utilisé pour la suite.
 
-Pre_Preprocessing = False
+Pre_Preprocessing = True
 Image_Information_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Anotations/"
 Name_Image_Information = "Image_Information.csv"
 Name_Image_Information_Train = "Image_Information_Train.csv"
@@ -69,20 +69,6 @@ else:
 
 
 # Preprocessing des images
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
