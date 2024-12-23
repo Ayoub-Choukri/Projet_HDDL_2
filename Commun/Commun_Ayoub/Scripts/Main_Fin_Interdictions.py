@@ -125,12 +125,12 @@ Model = resnet18(num_classes=np.unique(labels_train).shape[0])
 
 
 # Train the model
-Nb_Epochs = 150
+Nb_Epochs = 600
 optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 augment = True
-transform_type =create_transofrm_augmentation_labels(p=0.3)
+transform_type =create_transofrm_augmentation_labels(p=0.6)
 
 Confusion_Matrix_Saving_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Commun_Ayoub/Metrics/Metrics_Fin_Interdictions/Confusion_Matrix/"
 Losses_Saving_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Commun_Ayoub/Metrics/Metrics_Fin_Interdictions/Losses/"
@@ -159,10 +159,10 @@ else:
 
 
 # Testing
-Predicted_Train , Labels_Train = test_model(Model,dataloader_train,device,train_on="labels")
+Predicted_Train , Labels_Train = test_model(Model,dataloader_train,device,train_on="sublabels")
 confusion_Matrix_Train = compute_confusion_matrix(Labels_Train,Predicted_Train)
 
-Predicted_Test , Labels_Test = test_model(Model,dataloader_test,device,train_on="labels")
+Predicted_Test , Labels_Test = test_model(Model,dataloader_test,device,train_on="sublabels")
 confusion_Matrix_Test = compute_confusion_matrix(Labels_Test,Predicted_Test)
 
 # plot confusion matrix
