@@ -18,7 +18,7 @@ sys.path.append(Path_Modules)
 sys.path.append(Path_Models)
 # Importer les module
 from Preprocessing import *
-from Model import *
+from Resnet import *
 from Train import *
 
 
