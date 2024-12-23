@@ -55,7 +55,7 @@ def train_model(model, dataloader_train,dataloader_test,num_epochs,criterion, op
         ProgressBar_Nb_Batches = tqdm(dataloader_train, desc="Batches Train", leave=False)
 
         for nb_batch, (input_images, types, sublabels, labels) in enumerate(ProgressBar_Nb_Batches):
-
+            torch.cuda.empty_cache()
             if train_on == "types":
                 labels = types
             elif train_on == "sublabels":
@@ -145,8 +145,7 @@ def train_model(model, dataloader_train,dataloader_test,num_epochs,criterion, op
         Test_Accuracy_Per_Epoch.append(Test_Accuracy_Epoch)
 
         print(f"Epoch {epoch+1}/{num_epochs}, Train Loss: {Train_Loss_Epoch :.4f}, Test Loss: {Test_Loss_Epoch :.4f}, Train Accuracy: {Train_Accuracy_Epoch :.4f}, Test Accuracy: {Test_Accuracy_Epoch :.4f}")
-
-
+        # torch.cuda.empty_cache()
 
     return Train_Losses_Per_Batch, Test_Losses_Per_Batch, Train_Accuracy_Per_Batch, Test_Accuracy_Per_Batch, Train_Losses_Per_Epoch, Test_Losses_Per_Epoch, Train_Accuracy_Per_Epoch, Test_Accuracy_Per_Epoch
 
@@ -298,7 +297,8 @@ def plot_accuracy_per_batch(Train_Accuracy_Per_Batch, Test_Accuracy_Per_Batch,fi
 
 
 
-def compute_confusion_matrix(Predicted, Labels):
+def compute_confusion_matrix(Labels,Predicted):
+    print(f"Nb True classes: {len(np.unique(Labels))}, Nb Predicted classes: {len(np.unique(Predicted))}")
     Confusing_Matrix = confusion_matrix(Labels, Predicted)
     return Confusing_Matrix
 
