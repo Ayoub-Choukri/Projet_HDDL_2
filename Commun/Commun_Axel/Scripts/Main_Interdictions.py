@@ -118,12 +118,12 @@ Save = True and Train
 Save_Architecture = True 
 Model_Path = "./Saved_Models/Model_Interdictions.pth"
 
-Model = resnet18(num_classes=np.unique(labels_train).shape[0])
+Model = get_efficientNet(len(labels_to_int))
 
 
 
 # Train the model
-Nb_Epochs = 150
+Nb_Epochs = 100
 optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

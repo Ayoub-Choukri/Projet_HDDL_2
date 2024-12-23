@@ -9,7 +9,7 @@ def check_path_exists(Path,Message):
 
 # Cette partie permet d'ajouter le dossier parent au path, pour pouvoir importer les modules que nous avons créés. ça peut être soit un chemin
 # absolu, soit un chemin relatif. Ici, c'est un chemin absolu.
-Path_Modules = "./Modules"
+Path_Modules = "./../Modules"
 Path_Models = "./Models"
 check_path_exists(Path_Modules,"Le chemin spécifié pour importer les modules n'existe pas. Il faut surement le modifier.")
 
@@ -18,7 +18,7 @@ sys.path.append(Path_Modules)
 sys.path.append(Path_Models)
 # Importer les module
 from Preprocessing import *
-from Model import *
+from EfficientNet import *
 from Train import *
 
 
@@ -119,17 +119,17 @@ Save = True and Train
 Save_Architecture = True 
 Model_Path = "./Saved_Models/Model_Obligations.pth"
 
-Model = resnet18(num_classes=np.unique(labels_train).shape[0])
+Model = get_efficientNet(len(labels_to_int))
 
 
 
 # Train the model
-Nb_Epochs = 150
+Nb_Epochs = 50
 optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.01)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 augment = True
-transform_type =create_transofrm_augmentation_labels(p=0.5)
+transform_type =create_transofrm_augmentation_labels(p=0.5, rotmax=15, prob_vertical_flip=0)
 
 Confusion_Matrix_Saving_Path = "./Metrics/Metrics_Obligations/Confusion_Matrix/"
 Losses_Saving_Path = "./Metrics/Metrics_Obligations/Losses/"

@@ -18,7 +18,7 @@ sys.path.append(Path_Modules)
 sys.path.append(Path_Models)
 # Importer les module
 from Preprocessing import *
-from Model import *
+from EfficientNet import *
 from Train import *
 
 
@@ -112,17 +112,17 @@ dataloader_test ,_= create_dataloader(images_test, types_encoded_test, sublabels
 
 
 What_To_Train = "Labels"
-Train = False
+Train = True
 Save = True and Train
 Save_Architecture = True 
 Model_Path = "./Saved_Models/Model_Indications.pth"
 
-Model = resnet18(num_classes=np.unique(labels_train).shape[0])
+Model = get_efficientNet(len(labels_to_int))
 
 
 
 # Train the model
-Nb_Epochs = 600
+Nb_Epochs = 50
 optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.01)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

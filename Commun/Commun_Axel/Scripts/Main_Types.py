@@ -8,7 +8,7 @@ def check_path_exists(Path,Message):
         sys.exit(1)
 # Cette partie permet d'ajouter le dossier parent au path, pour pouvoir importer les modules que nous avons créés. ça peut être soit un chemin
 # absolu, soit un chemin relatif. Ici, c'est un chemin absolu.
-Path_Modules = "./Modules"
+Path_Modules = "./../Modules"
 Path_Models = "./Models"
 check_path_exists(Path_Modules,"Le chemin spécifié pour importer les modules n'existe pas. Il faut surement le modifier.")
 
@@ -18,7 +18,7 @@ sys.path.append(Path_Models)
 
 # Importer les module
 from Preprocessing import *
-from Resnet import *
+#from Resnet import *
 from Train import *
 from EfficientNet import *
 
@@ -133,12 +133,12 @@ Save = True and Train
 Save_Architecture = True 
 Model_Path = "./Saved_Models/Model_Types.pth"
 
-Model = resnet18(num_classes=len(types_to_int))
+Model = get_efficientNet_Non_Trained(len(labels_to_int))
 
 
 
 # Train the model
-Nb_Epochs = 50
+Nb_Epochs = 10
 optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.0001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -165,7 +165,7 @@ if Train:
 
 else:
     # Charger le modèle
-    Model = load_model(Model_Path,load_architechture=Save_Architecture, model_class=resnet18)
+    Model = load_model(Model_Path,load_architechture=Save_Architecture)
     Model = Model.to(device)
 
 
