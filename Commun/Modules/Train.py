@@ -5,7 +5,6 @@ import torch.optim as optim
 import torchvision
 import torchvision.transforms as transforms
 import numpy as np
-from Model import *
 from Preprocessing import *
 from tqdm import tqdm
 from tqdm.notebook import tqdm as tqdm_notebook
@@ -298,7 +297,7 @@ def plot_accuracy_per_batch(Train_Accuracy_Per_Batch, Test_Accuracy_Per_Batch,fi
 
 
 def compute_confusion_matrix(Labels,Predicted):
-    print(f"Nb True classes: {len(np.unique(Labels))}, Nb Predicted classes: {len(np.unique(Predicted))}")
+    # print(f"Nb True classes: {len(np.unique(Labels))}, Nb Predicted classes: {len(np.unique(Predicted))}")
     Confusing_Matrix = confusion_matrix(Labels, Predicted)
     return Confusing_Matrix
 

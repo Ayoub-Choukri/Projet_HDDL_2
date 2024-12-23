@@ -602,11 +602,11 @@ def load_transforms(path):
 
 
 
-def create_transofrm_augmentation_labels(p=0.6):
+def create_transofrm_augmentation_labels(p=0.6,rotmax=45,prob_vertical_flip = 0.2):
     # p est la probabilité d'appliquer la transformation
     List_Transforms = [
-        RandomVerticalFlip(0.6),
-        RandomRotation(45),
+        RandomVerticalFlip(prob_vertical_flip),
+        RandomRotation(rotmax),
         RandomPerspective(),
         ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1),
         RandomAffine(degrees=30),
