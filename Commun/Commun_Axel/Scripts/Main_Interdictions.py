@@ -123,8 +123,8 @@ Model = get_efficientNet(len(labels_to_int))
 
 
 # Train the model
-Nb_Epochs = 50
-optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.001)
+Nb_Epochs = 100
+optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.0001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 augment = True
