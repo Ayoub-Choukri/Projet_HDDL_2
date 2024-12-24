@@ -133,12 +133,12 @@ Save = True and Train
 Save_Architecture = True 
 Model_Path = "./Saved_Models/Model_Types.pth"
 
-Model = get_efficientNet_Non_Trained(len(labels_to_int))
+Model = get_efficientNet(len(types_to_int))
 
 
 
 # Train the model
-Nb_Epochs = 10
+Nb_Epochs = 20
 optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.0001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
