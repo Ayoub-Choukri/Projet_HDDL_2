@@ -1,0 +1,432 @@
+{
+"Dangers": {
+  "Danger permanent": {
+    "Français": {
+      "Traduction": "Danger permanent",
+      "Mots-Clés": ["danger"],
+      "Requête": "Panneau+Routier+Danger+Permanent"
+    },
+    "Anglais": {
+      "Traduction": "Permanent Danger",
+      "Mots-Clés": ["danger"],
+      "Requête": "Permanent+Danger+Road+Sign"
+    },
+    "Espagnol": {
+      "Traduction": "Peligro permanente",
+      "Mots-Clés": ["peligro"],
+      "Requête": "Señal+de+Tráfico+Peligro+Permanente"
+    },
+    "Allemand": {
+      "Traduction": "Dauergefahr",
+      "Mots-Clés": ["gefahr"],
+      "Requête": "Verkehrsschild+Dauergefahr"
+    }
+  }
+}
+
+,
+
+  "Interdictions": {
+    "Circulation interdite à tout véhicule": {
+      "Français": {
+        "Traduction": "Circulation interdite à tout véhicule",
+        "Mots-Clés": ["interdite"],
+        "Requête": "panneau+routier+circulation+interdite+à+tout+véhicule+panneau"
+      },
+      "Anglais": {
+        "Traduction": "No Entry for All Vehicles",
+        "Mots-Clés": ["entry"],
+        "Requête": "road+sign+no+entry+for+all+vehicles+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Prohibido el paso a todo vehículo",
+        "Mots-Clés": ["prohibido"],
+        "Requête": "señal+routier+prohibido+paso+a+todo+vehículo+señal"
+      },
+      "Allemand": {
+        "Traduction": "Verbot für alle Fahrzeuge",
+        "Mots-Clés": ["verbot"],
+        "Requête": "verkehrsschild+verbot+für+alle+fahrzeuge+schild"
+      }
+    },
+    "Sens interdit": {
+      "Français": {
+        "Traduction": "Sens interdit",
+        "Mots-Clés": ["sens"],
+        "Requête": "panneau+routier+sens+interdit+panneau"
+      },
+      "Anglais": {
+        "Traduction": "No Entry",
+        "Mots-Clés": ["entry"],
+        "Requête": "road+sign+no+entry+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Prohibido el paso",
+        "Mots-Clés": ["prohibido"],
+        "Requête": "señal+routier+prohibido+paso+señal"
+      },
+      "Allemand": {
+        "Traduction": "Einfahrt verboten",
+        "Mots-Clés": ["verboten"],
+        "Requête": "verkehrsschild+einfahrt+verboten+zeichen"
+      }
+    },
+    "Interdiction de tourner à gauche": {
+      "Français": {
+        "Traduction": "Interdiction de tourner à gauche",
+        "Mots-Clés": ["interdiction"],
+        "Requête": "panneau+routier+interdiction+tourner+à+gauche+panneau"
+      },
+      "Anglais": {
+        "Traduction": "No Left Turn",
+        "Mots-Clés": ["left"],
+        "Requête": "road+sign+no+left+turn+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Prohibido girar a la izquierda",
+        "Mots-Clés": ["prohibido"],
+        "Requête": "señal+routier+prohibido+girar+a+la+izquierda+señal"
+      },
+      "Allemand": {
+        "Traduction": "Linksabbiegen verboten",
+        "Mots-Clés": ["verboten"],
+        "Requête": "verkehrsschild+linksabbiegen+verboten+zeichen"
+      }
+    },
+    "Interdiction de tourner à droite": {
+      "Français": {
+        "Traduction": "Interdiction de tourner à droite",
+        "Mots-Clés": ["interdiction"],
+        "Requête": "panneau+routier+interdiction+tourner+à+droite+panneau"
+      },
+      "Anglais": {
+        "Traduction": "No Right Turn",
+        "Mots-Clés": ["right"],
+        "Requête": "road+sign+no+right+turn+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Prohibido girar a la derecha",
+        "Mots-Clés": ["prohibido"],
+        "Requête": "señal+routier+prohibido+girar+a+la+derecha+señal"
+      },
+      "Allemand": {
+        "Traduction": "Rechtsabbiegen verboten",
+        "Mots-Clés": ["verboten"],
+        "Requête": "verkehrsschild+rechtsabbiegen+verboten+zeichen"
+      }
+    },
+    "Interdiction de faire demi-tour": {
+      "Français": {
+        "Traduction": "Interdiction de faire demi-tour",
+        "Mots-Clés": ["interdiction"],
+        "Requête": "panneau+routier+interdiction+demi-tour+panneau"
+      },
+      "Anglais": {
+        "Traduction": "No U-Turn",
+        "Mots-Clés": ["u-turn"],
+        "Requête": "road+sign+no+u-turn+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Prohibido el giro en U",
+        "Mots-Clés": ["prohibido"],
+        "Requête": "señal+routier+prohibido+giro+en+U+señal"
+      },
+      "Allemand": {
+        "Traduction": "Wenden verboten",
+        "Mots-Clés": ["verboten"],
+        "Requête": "verkehrsschild+wenden+verboten+zeichen"
+      }
+    },
+    "Interdiction de dépasser": {
+      "Français": {
+        "Traduction": "Interdiction de dépasser",
+        "Mots-Clés": ["interdiction"],
+        "Requête": "panneau+routier+interdiction+dépasser+panneau"
+      },
+      "Anglais": {
+        "Traduction": "No Overtaking",
+        "Mots-Clés": ["overtaking"],
+        "Requête": "road+sign+no+overtaking+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Prohibido adelantar",
+        "Mots-Clés": ["prohibido"],
+        "Requête": "señal+routier+prohibido+adelantar+señal"
+      },
+      "Allemand": {
+        "Traduction": "Überholen verboten",
+        "Mots-Clés": ["verboten"],
+        "Requête": "verkehrsschild+überholen+verboten+zeichen"
+      }
+    },
+    "Interdiction de dépasser (camions)": {
+      "Français": {
+        "Traduction": "Interdiction de dépasser (camions)",
+        "Mots-Clés": ["interdiction"],
+        "Requête": "panneau+routier+interdiction+dépasser+camions+panneau"
+      },
+      "Anglais": {
+        "Traduction": "No Overtaking for Trucks",
+        "Mots-Clés": ["overtaking"],
+        "Requête": "road+sign+no+overtaking+for+trucks+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Prohibido adelantar para camiones",
+        "Mots-Clés": ["prohibido"],
+        "Requête": "señal+routier+prohibido+adelantar+para+camiones+señal"
+      },
+      "Allemand": {
+        "Traduction": "Überholverbot für LKW",
+        "Mots-Clés": ["verbot"],
+        "Requête": "verkehrsschild+überholverbot+für+LKW+zeichen"
+      }
+    },
+    "Stationnement interdit": {
+      "Français": {
+        "Traduction": "Stationnement interdit",
+        "Mots-Clés": ["interdit"],
+        "Requête": "panneau+routier+stationnement+interdit+panneau"
+      },
+      "Anglais": {
+        "Traduction": "No Parking",
+        "Mots-Clés": ["parking"],
+        "Requête": "road+sign+no+parking+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Prohibido estacionar",
+        "Mots-Clés": ["prohibido"],
+        "Requête": "señal+routier+prohibido+estacionar+señal"
+      },
+      "Allemand": {
+        "Traduction": "Parken verboten",
+        "Mots-Clés": ["verboten"],
+        "Requête": "verkehrsschild+parken+verboten+zeichen"
+      }
+    },
+    "Arrêt et stationnement interdits": {
+      "Français": {
+        "Traduction": "Arrêt et stationnement interdits",
+        "Mots-Clés": ["interdits"],
+        "Requête": "panneau+routier+arrêt+et+stationnement+interdits+panneau"
+      },
+      "Anglais": {
+        "Traduction": "No Stopping or Parking",
+        "Mots-Clés": ["stopping"],
+        "Requête": "road+sign+no+stopping+or+parking+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Prohibido parar y estacionar",
+        "Mots-Clés": ["prohibido"],
+        "Requête": "señal+routier+prohibido+parar+y+estacionar+señal"
+      },
+      "Allemand": {
+        "Traduction": "Halten und Parken verboten",
+        "Mots-Clés": ["verboten"],
+        "Requête": "verkehrsschild+halten+und+parken+verboten+zeichen"
+      }
+    },
+    "Limitations de vitesses : 30, 50, 70, 90, 100, 110, 130": {
+      "Français": {
+        "Traduction": "Limitations de vitesses : 30, 50, 70, 90, 100, 110, 130",
+        "Mots-Clés": ["limitations"],
+        "Requête": "panneau+routier+limitations+vitesses+panneau"
+      },
+      "Anglais": {
+        "Traduction": "Speed Limits: 30, 50, 70, 90, 100, 110, 130",
+        "Mots-Clés": ["limits"],
+        "Requête": "road+sign+speed+limits+30+50+70+90+100+110+130+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Límites de velocidad: 30, 50, 70, 90, 100, 110, 130",
+        "Mots-Clés": ["límites"],
+        "Requête": "señal+routier+límites+de+velocidad+30+50+70+90+100+110+130+señal"
+      },
+      "Allemand": {
+        "Traduction": "Geschwindigkeitsbegrenzungen: 30, 50, 70, 90, 100, 110, 130",
+        "Mots-Clés": ["begrenzungen"],
+        "Requête": "verkehrsschild+geschwindigkeitsbegrenzungen+30+50+70+90+100+110+130+zeichen"
+      }
+    }
+  }
+,
+
+
+  "Obligations": {
+    "Obligation de tourner à gauche": {
+      "Français": {
+        "Traduction": "Obligation de tourner à gauche",
+        "Mots-Clés": ["obligation"],
+        "Requête": "panneau+routier+obligation+de+tourner+à+gauche+panneau"
+      },
+      "Anglais": {
+        "Traduction": "Left Turn Mandatory",
+        "Mots-Clés": ["mandatory"],
+        "Requête": "road+sign+left+turn+mandatory+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Obligación de girar a la izquierda",
+        "Mots-Clés": ["obligación"],
+        "Requête": "señal+routier+obligación+de+girar+a+la+izquierda+señal"
+      },
+      "Allemand": {
+        "Traduction": "Linksabbiegen Pflicht",
+        "Mots-Clés": ["pflicht"],
+        "Requête": "verkehrsschild+linksabbiegen+pflicht+zeichen"
+      }
+    },
+    "Obligation de tourner à droite": {
+      "Français": {
+        "Traduction": "Obligation de tourner à droite",
+        "Mots-Clés": ["obligation"],
+        "Requête": "panneau+routier+obligation+de+tourner+à+droite+panneau"
+      },
+      "Anglais": {
+        "Traduction": "Right Turn Mandatory",
+        "Mots-Clés": ["mandatory"],
+        "Requête": "road+sign+right+turn+mandatory+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Obligación de girar a la derecha",
+        "Mots-Clés": ["obligación"],
+        "Requête": "señal+routier+obligación+de+girar+a+la+derecha+señal"
+      },
+      "Allemand": {
+        "Traduction": "Rechtsabbiegen Pflicht",
+        "Mots-Clés": ["pflicht"],
+        "Requête": "verkehrsschild+rechtsabbiegen+pflicht+zeichen"
+      }
+    },
+    "Direction obligatoire : Tout droit": {
+      "Français": {
+        "Traduction": "Direction obligatoire : Tout droit",
+        "Mots-Clés": ["direction"],
+        "Requête": "panneau+routier+direction+obligatoire+tout+droit+panneau"
+      },
+      "Anglais": {
+        "Traduction": "Mandatory Direction: Straight Ahead",
+        "Mots-Clés": ["mandatory"],
+        "Requête": "road+sign+mandatory+direction+straight+ahead+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Dirección obligatoria: Todo recto",
+        "Mots-Clés": ["dirección"],
+        "Requête": "señal+routier+dirección+obligatoria+todo+recto+señal"
+      },
+      "Allemand": {
+        "Traduction": "Verpflichtende Richtung: Geradeaus",
+        "Mots-Clés": ["richtung"],
+        "Requête": "verkehrsschild+verpflichtende+richtung+geradeaus+zeichen"
+      }
+    }
+  }
+
+
+  
+
+,
+
+
+
+  "Indication": {
+    "Passage Piéton": {
+      "Français": {
+        "Traduction": "Passage Piéton",
+        "Mots-Clés": ["passage"],
+        "Requête": "panneau+routier+passage+piéton+panneau"
+      },
+      "Anglais": {
+        "Traduction": "Pedestrian Crossing",
+        "Mots-Clés": ["pedestrian"],
+        "Requête": "road+sign+pedestrian+crossing+sign"
+      },
+      "Espagnol": {
+        "Traduction": "Paso de peatones",
+        "Mots-Clés": ["paso"],
+        "Requête": "señal+routier+paseo+de+peatones+señal"
+      },
+      "Allemand": {
+        "Traduction": "Fußgängerüberweg",
+        "Mots-Clés": ["fußgänger"],
+        "Requête": "verkehrsschild+fußgängerüberweg+zeichen"
+      }
+    }
+  }
+
+
+
+  ,
+  
+    "Panneaux spéciaux": {
+      "Route prioritaire": {
+        "Français": {
+          "Traduction": "Route prioritaire",
+          "Mots-Clés": ["route"],
+          "Requête": "panneau+routier+route+prioritaire+panneau"
+        },
+        "Anglais": {
+          "Traduction": "Priority Road",
+          "Mots-Clés": ["priority"],
+          "Requête": "road+sign+priority+road+sign"
+        },
+        "Espagnol": {
+          "Traduction": "Carretera prioritaria",
+          "Mots-Clés": ["carretera"],
+          "Requête": "señal+routier+carretera+prioritaria+señal"
+        },
+        "Allemand": {
+          "Traduction": "Vorrangstraße",
+          "Mots-Clés": ["vorrangstraße"],
+          "Requête": "verkehrsschild+vorrangstraße+zeichen"
+        }
+      },
+      "Stop": {
+        "Français": {
+          "Traduction": "Stop",
+          "Mots-Clés": ["stop"],
+          "Requête": "panneau+routier+stop+panneau"
+        },
+        "Anglais": {
+          "Traduction": "Stop",
+          "Mots-Clés": ["stop"],
+          "Requête": "road+sign+stop+sign"
+        },
+        "Espagnol": {
+          "Traduction": "Alto",
+          "Mots-Clés": ["alto"],
+          "Requête": "señal+routier+alto+señal"
+        },
+        "Allemand": {
+          "Traduction": "Halt",
+          "Mots-Clés": ["halt"],
+          "Requête": "verkehrsschild+hhalt+zeichen"
+        }
+      },
+      "Cédez le passage": {
+        "Français": {
+          "Traduction": "Cédez le passage",
+          "Mots-Clés": ["cédez"],
+          "Requête": "panneau+routier+cédez+le+passage+panneau"
+        },
+        "Anglais": {
+          "Traduction": "Yield",
+          "Mots-Clés": ["yield"],
+          "Requête": "road+sign+yield+sign"
+        },
+        "Espagnol": {
+          "Traduction": "Ceda el paso",
+          "Mots-Clés": ["ceda"],
+          "Requête": "señal+routier+ceda+el+paso+señal"
+        },
+        "Allemand": {
+          "Traduction": "Vorfahrt gewähren",
+          "Mots-Clés": ["vorfahrt"],
+          "Requête": "verkehrsschild+vorfahrt+gewähren+zeichen"
+        }
+      }
+    }
+  }
+  
+
+
+
+
