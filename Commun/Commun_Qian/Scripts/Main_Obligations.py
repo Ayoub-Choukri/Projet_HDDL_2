@@ -124,7 +124,7 @@ Model = get_MobileNet(len(labels_to_int), pretrained=False)
 
 
 # Train the model
-Nb_Epochs = 100
+Nb_Epochs = 150
 optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.01)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
