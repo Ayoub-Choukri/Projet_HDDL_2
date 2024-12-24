@@ -84,7 +84,7 @@ def test_image(image,folder_models_path,dict_paths):
         model.eval()
         with torch.no_grad():
             image = image.unsqueeze(0)
-            print(image.shape)
+            # print(image.shape)
             image = image.permute(0,3,1,2)
             output = model(image)
             _, predicted = torch.max(output, 1)

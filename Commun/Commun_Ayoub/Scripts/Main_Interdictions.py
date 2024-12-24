@@ -128,7 +128,7 @@ optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 augment = True
-transform_type =create_transofrm_augmentation_labels(p=0.6,rotmax=35,prob_vertical_flip = 0)
+transform_type =create_transofrm_augmentation_labels(p=0.6,rotmax=15,prob_vertical_flip = 0.5)
 
 Confusion_Matrix_Saving_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Commun_Ayoub/Metrics/Metrics_Interdictions/Confusion_Matrix/"
 Losses_Saving_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Commun_Ayoub/Metrics/Metrics_Interdictions/Losses/"

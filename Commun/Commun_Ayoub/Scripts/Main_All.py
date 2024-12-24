@@ -124,12 +124,12 @@ Model = resnet18(num_classes=np.unique(labels_train).shape[0])
 
 
 # Train the model
-Nb_Epochs = 100
+Nb_Epochs = 150
 optimizer = torch.optim.Adam(Model.parameters(), lr=0.001, weight_decay=0.0001)
 criterion = nn.CrossEntropyLoss()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 augment = True
-transform_type =create_transofrm_augmentation_labels(p=0.35,rotmax=25,prob_vertical_flip = 0)
+transform_type =create_transofrm_augmentation_labels(p=0.45,rotmax=25,prob_vertical_flip = 0)
 
 Confusion_Matrix_Saving_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Commun_Ayoub/Metrics/Metrics_All/Confusion_Matrix/"
 Losses_Saving_Path = "/home/ayoubchoukri/Etudes/5A/Stats_Grande_Dimension/Projets/Projet/Projet_HDDL_2/Commun/Commun_Ayoub/Metrics/Metrics_All/Losses/"
