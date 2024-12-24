@@ -155,5 +155,5 @@ confusion_Matrix_Test = compute_confusion_matrix(Labels_Test,Predicted_Test)
 # plot confusion matrix
 plot_confusion_matrix(confusion_Matrix_Train,int_to_label=int_to_types,figsize=(12,6),savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Train.png")
 plot_confusion_matrix(confusion_Matrix_Test,int_to_label=int_to_types,figsize=(12,6),savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Test.png")
-plot_confusion_matrix(confusion_Matrix_Test,normalize=True, int_to_label=int_to_labels, figsize=(30,25),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Test_Normalized.png")
-plot_confusion_matrix(confusion_Matrix_Train,normalize=True, int_to_label=int_to_labels, figsize=(30,25),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Train_Normalized.png")
+plot_confusion_matrix(confusion_Matrix_Test,normalize=True, int_to_label=int_to_types, figsize=(12,6),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Test_Normalized.png")
+plot_confusion_matrix(confusion_Matrix_Train,normalize=True, int_to_label=int_to_types, figsize=(12,6),adjust_for_labels=True,savefig=True,path= Confusion_Matrix_Saving_Path+"Confusion_Matrix_Train_Normalized.png")
